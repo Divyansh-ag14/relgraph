@@ -1,0 +1,27 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+data/cache/
+*.pt
+.DS_Store
+.ipynb_checkpoints/
+
+# RelBench dataset/materialization caches
+relbench_cache/
+
+# Keep results JSON + the canonical report tracked; ignore other run artifacts in outputs/
+# (timestamped reports like outputs/report_20260602_001845.txt stay ignored)
+outputs/*
+!outputs/relgt_comparison.json
+!outputs/benchmark_matrix.json
+!outputs/link_prediction.json
+!outputs/report.txt
+
+# Official RelGT is cloned on demand (see README); don't vendor it
+external/
+
+personal_docs/
