@@ -1,0 +1,18 @@
+# Core (CPU-friendly). For CUDA, install torch from pytorch.org first.
+torch>=2.2.0
+torch-geometric>=2.6.0
+numpy>=1.26.0
+pandas>=2.1.0
+scikit-learn>=1.4.0
+scipy>=1.11.0
+tqdm>=4.66.0
+
+# RelBench / RDL stack (same as relbench/tutorials/train_model.ipynb)
+relbench>=2.0.0
+pytorch-frame>=0.2.0
+tensorboard>=2.14.0
+torchvision>=0.17.0
+
+# Relational Graph Transformer (RelGT-lite + official snap-stanford/relgt port)
+einops>=0.7.0
+h5py>=3.10.0
