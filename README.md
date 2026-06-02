@@ -44,35 +44,41 @@ python scripts/show_results.py
 
 Entity tasks report **validation** metrics only (RelBench hides test labels for the leaderboard). Link prediction has a local test split.
 
-| Script | Purpose |
-|--------|---------|
-| `benchmark.py` | `flat`, `graphsage`, `relgt-lite` on entity tasks |
-| `compare_relgt.py` | RelGT variants on one task |
-| `pql_demo.py` | Parse/compile/validate PQL queries |
-| `train_link_prediction.py` | FK edge reconstruction |
-| `show_results.py` | Tables from `outputs/*.json` |
-| `run_relbench.py` | List tasks, no training |
+
+| Script                     | Purpose                                           |
+| -------------------------- | ------------------------------------------------- |
+| `benchmark.py`             | `flat`, `graphsage`, `relgt-lite` on entity tasks |
+| `compare_relgt.py`         | RelGT variants on one task                        |
+| `pql_demo.py`              | Parse/compile/validate PQL queries                |
+| `train_link_prediction.py` | FK edge reconstruction                            |
+| `show_results.py`          | Tables from `outputs/*.json`                      |
+| `run_relbench.py`          | List tasks, no training                           |
+
 
 ## Task types
 
 Handled in `src/relbench_pipeline/task_utils.py`:
 
-| Type | `rel-f1` example | Metric |
-|------|------------------|--------|
-| Binary | `driver-dnf`, `driver-top3` | ROC-AUC |
-| Regression | `driver-position` | MAE |
-| Multiclass | other datasets | accuracy |
-| Link prediction | `results → constructors` | ROC-AUC |
+
+| Type            | `rel-f1` example            | Metric   |
+| --------------- | --------------------------- | -------- |
+| Binary          | `driver-dnf`, `driver-top3` | ROC-AUC  |
+| Regression      | `driver-position`           | MAE      |
+| Multiclass      | other datasets              | accuracy |
+| Link prediction | `results → constructors`    | ROC-AUC  |
+
 
 ## Results (CPU subset)
 
 `rel-f1`, 1024 train / 512 val seeds, K=32, 64 channels, 8 epochs. Full matrix: `outputs/benchmark_matrix.json`.
 
-| Model | driver-dnf | driver-top3 | driver-position |
-|-------|------------|-------------|-----------------|
-| flat | 0.588 | 0.571 | 3.95 MAE |
-| graphsage | 0.505 | 0.523 | 4.78 MAE |
-| relgt-lite | **0.679** | **0.669** | **3.76 MAE** |
+
+| Model      | driver-dnf | driver-top3 | driver-position |
+| ---------- | ---------- | ----------- | --------------- |
+| flat       | 0.588      | 0.571       | 3.95 MAE        |
+| graphsage  | 0.505      | 0.523       | 4.78 MAE        |
+| relgt-lite | **0.679**  | **0.669**   | **3.76 MAE**    |
+
 
 RelGT comparison on `driver-dnf` (`outputs/relgt_comparison.json`): official RelGT 0.692, RelGT-lite 0.679, local-only ablation 0.664.
 
@@ -107,5 +113,3 @@ outputs/                 benchmark_matrix.json, relgt_comparison.json, link_pred
 ## References
 
 - [RelGT](https://arxiv.org/abs/2505.10960) · [RDL](https://arxiv.org/html/2312.04615v1) · [RelBench](https://github.com/snap-stanford/relbench) · [PyG](https://pytorch-geometric.readthedocs.io/) · [PyTorch Frame](https://github.com/pyg-team/pytorch-frame)
-
-MIT
