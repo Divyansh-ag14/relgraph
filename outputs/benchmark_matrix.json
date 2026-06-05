@@ -1,0 +1,65 @@
+{
+  "dataset": "rel-f1",
+  "protocol": {
+    "train_seeds": 1024,
+    "val_seeds": 512,
+    "K": 32,
+    "channels": 64,
+    "epochs": 8,
+    "device": "cpu"
+  },
+  "tasks": [
+    "driver-dnf",
+    "driver-top3",
+    "driver-position"
+  ],
+  "models": [
+    "flat",
+    "graphsage",
+    "relgt-lite"
+  ],
+  "matrix": {
+    "flat": {
+      "driver-dnf": {
+        "metric": "roc_auc",
+        "value": 0.587531958035793
+      },
+      "driver-top3": {
+        "metric": "roc_auc",
+        "value": 0.5710352030764119
+      },
+      "driver-position": {
+        "metric": "mae",
+        "value": 3.9507421888505614
+      }
+    },
+    "graphsage": {
+      "driver-dnf": {
+        "metric": "roc_auc",
+        "value": 0.5048047253812924
+      },
+      "driver-top3": {
+        "metric": "roc_auc",
+        "value": 0.5225389892468013
+      },
+      "driver-position": {
+        "metric": "mae",
+        "value": 4.779359277599083
+      }
+    },
+    "relgt-lite": {
+      "driver-dnf": {
+        "metric": "roc_auc",
+        "value": 0.6785021599224191
+      },
+      "driver-top3": {
+        "metric": "roc_auc",
+        "value": 0.6686685498611342
+      },
+      "driver-position": {
+        "metric": "mae",
+        "value": 3.7557365175398814
+      }
+    }
+  }
+}
