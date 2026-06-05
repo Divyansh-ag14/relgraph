@@ -1,0 +1,36 @@
+{
+  "dataset": "rel-f1",
+  "task": "driver-dnf",
+  "protocol": {
+    "train_seeds": 1024,
+    "val_seeds": 512,
+    "K": 32,
+    "channels": 64,
+    "epochs": 8,
+    "device": "cpu"
+  },
+  "results": [
+    {
+      "model": "RelGT-lite (local+global)",
+      "metric": "roc_auc",
+      "best_val_metric": 0.6785572599841312,
+      "params": 3229825.0,
+      "train_seeds": 1024.0,
+      "val_seeds": 512.0
+    },
+    {
+      "model": "RelGT-lite (local only)",
+      "metric": "roc_auc",
+      "best_val_metric": 0.664065943753857,
+      "params": 3200833.0,
+      "train_seeds": 1024.0,
+      "val_seeds": 512.0
+    },
+    {
+      "model": "Official RelGT (full)",
+      "metric": "roc_auc",
+      "best_val_metric": 0.6924534955479151,
+      "params": 3207942.0
+    }
+  ]
+}
