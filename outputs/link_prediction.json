@@ -1,0 +1,6 @@
+{
+  "task": "link-pred:results->constructors",
+  "metric": "roc_auc",
+  "best_test_metric": 0.9557614281244188,
+  "params": 3512385.0
+}
