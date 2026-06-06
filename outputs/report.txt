@@ -1,0 +1,37 @@
+
+========================================================================
+RELGRAPH — RESULTS REPORT
+========================================================================
+Generated: 2026-06-02 00:33:55 (EDT)
+Source JSONs: /Users/divyanshagarwal/Desktop/rdl-project/outputs
+
+========================================================================
+UNIFIED BENCHMARK  —  rel-f1
+========================================================================
+train_seeds=1024  val_seeds=512  K=32  channels=64  epochs=8  device=cpu
+
+model              driver-dnf (roc_auc↑)   driver-top3 (roc_auc↑)   driver-position (mae↓)
+------------------------------------------------------------------------------------------
+flat                               0.588                    0.571                    3.951
+graphsage                          0.505                    0.523                    4.779
+relgt-lite                         0.679                    0.669                    3.756
+
+========================================================================
+RELGT COMPARISON  —  rel-f1 / driver-dnf
+========================================================================
+train_seeds=1024  val_seeds=512  K=32  channels=64  epochs=8  device=cpu
+
+model                                         best val      params
+------------------------------------------------------------------
+RelGT-lite (local+global)                       0.6786   3,229,825
+RelGT-lite (local only)                         0.6641   3,200,833
+Official RelGT (full)                           0.6925   3,207,942
+
+========================================================================
+LINK PREDICTION
+========================================================================
+link-pred:results->constructors           roc_auc = 0.9558
+params: 3,512,385
+
+========================================================================
+Note: these are saved results; re-run the individual scripts to refresh them.
